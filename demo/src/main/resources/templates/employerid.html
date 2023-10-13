@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${employer.name}"></title>
+<!--    <link rel="stylesheet" href="style.css">-->
+    <style>
+        img {
+            height: 100px;
+            width: 200px;
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${employer.name}"></h1>
+<img th:src="|/${employer.name}/${employer.logo_path}|">
+<!--<script>JS_File_Name</script>-->
+</body>
+</html>

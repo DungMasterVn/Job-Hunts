@@ -1,0 +1,9 @@
+body{
+    background-color: white;
+}
+.cursor {
+    height: 100px;
+    width: 200px;
+    /*display: block;*/
+    /*object-fit: cover;*/
+}
