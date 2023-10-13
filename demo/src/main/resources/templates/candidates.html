@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate List</title>
+    <link rel="stylesheet" href="mouse_effect/style.css">
+</head>
+<body>
+<h1>Candidates</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Position</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="candidate, iStat:${candidates}">
+        <th scope="row" th:text="${iStat.index} +1"></th>
+        <td><a th:href="|/candidate/${candidate.id}|" th:text="${candidate.name}"></a></td>
+        <td th:text="${candidate.gender}"></td>
+        <td th:text="${candidate.age}"></td>
+        <td th:text="${candidate.email}"></td>
+        <td th:text="${candidate.position}"></td>
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<a href="candidate/add">Đăng kí ứng tuyển</a>
+<script src="mouse_effect/event.js"></script>
+</body>
+</html>

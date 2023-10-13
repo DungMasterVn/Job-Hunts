@@ -2,9 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, intial-scale=1.0">
     <title>JobHunt</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        .cursor {
+            width: 2rem;
+            height: 2rem;
+            /*background-color: plum;*/
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%) scale(0);
+            border: 3px solid plum;
+            animation: animation1.6s;
+        }
+
+        .cursor::after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            border: 3px solid plum;
+        }
+        .cursor::before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 20%;
+            height: 20%;
+            border-radius: 50%;
+            border: 3px solid plum;
+        }
+
+        @keyframes animation1 {
+            0% {
+                transform: translate(-50%,-50%) scale(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%,-50%) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 <h1>Job Hunt</h1>
+<ul>
+    <li><a href="/employer">Xem nhà tuyển dụng</a></li>
+    <li><a href="/candidate">Xem ứng viên</a></li>
+</ul>
+<script>
+    const createCursor = (x,y) =>{
+        const cursor = document.createElement(`div`)
+        cursor.className = "cursor"
+        cursor.style.left = `${x}px`
+        cursor.style.top = `${y}px`
+        return cursor
+    }
+    window.addEventListener(`click`,event =>{
+        console.log(event)
+        const cursor = createCursor(event.pageX, event.pageY)
+        document.body.append(cursor)
+        cursorRemove(cursor)
+    })
+
+    const cursorRemove = cursor =>{
+        const timeout = setTimeout(() =>{
+            cursor.remove();
+            clearTimeout(timeout)
+        },500)
+    }
+</script>
 </body>
 </html>

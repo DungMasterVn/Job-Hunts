@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng tuyển</title>
+    <link rel="stylesheet" href="mouse_effect/style.css">
+</head>
+<body>
+<h1>Thông tin ứng tuyển</h1>
+<form action="#" th:action="@{/candidate/add}" method="post" name="candidate" enctype="multipart/form-data" th:object="${candidate}">
+    Name <input type="text" class="form-control" id="name" autocomplete="off" th:field="*{name}"/><br><br>
+     Gender <input type="text" class="form-control" id="gender" autocomplete="off" th:field="*{gender}"/><br><br>
+    Age <input type="text" class="form-control" id="age" autocomplete="off" th:field="*{age}"/><br><br>
+    Email <input type="text" class="form-control" id="email" autocomplete="off" th:field="*{email}"/><br><br>
+    Position <input type="text" class="form-control" id="position" autocomplete="off" th:field="*{position}"/><br><br>
+    Avatar <input type="file" class="form-control" th:field="*{avatar}"><br><br>
+  <button class="btn btn-primary mt-3" type="submit">Save</button>
+</form>
+<script src="mouse_effect/event.js"></script>
+</body>
+</html>

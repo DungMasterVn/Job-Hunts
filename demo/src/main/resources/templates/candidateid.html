@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${candidate.name}"></title>
+  <!--    <link rel="stylesheet" href="style.css">-->
+  <style>
+    img {
+      height: 100px;
+      width: 200px;
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+  <link rel="stylesheet" href="mouse_effect/style.css">
+</head>
+<body>
+<h1 th:text="${candidate.name}"></h1>
+<img th:src="|/${candidate.avatar}|">
+<script src="mouse_effect/event.js"></script>
+</body>
+</html>
